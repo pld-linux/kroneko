@@ -17,7 +17,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Kroneko is a KDE3 tool for configuring cron and anacron.
 
-%description -l pL
+%description -l pl
 Kroneko jest narzêdziem KDE3 u³atwiaj±cym konfiguracjê crona
 i anacrona.
 
