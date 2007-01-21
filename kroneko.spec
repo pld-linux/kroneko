@@ -2,7 +2,7 @@ Summary:	A KDE3 tool for configuring cron and anacron
 Summary(pl):	Narzêdzie KDE3 u³atwiaj±ce konfiguracjê crona i anacrona
 Name:		kroneko
 Version:	0.3.19
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://kyushu-u.dl.sourceforge.jp/kroneko/5642/%{name}-%{version}.tar.gz
@@ -10,9 +10,8 @@ Source0:	http://kyushu-u.dl.sourceforge.jp/kroneko/5642/%{name}-%{version}.tar.g
 URL:		http://www.kroneko.bounceme.net/kroneko/eng/
 BuildRequires:	fam-devel
 BuildRequires:	kdelibs-devel >= 3.1
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 Kroneko is a KDE3 tool for configuring cron and anacron.
@@ -25,21 +24,21 @@ i anacrona.
 %setup -q
 
 %build
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %configure
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities
-mv $RPM_BUILD_ROOT%{_applnkdir}/{Applications,Utilities}/kroneko.desktop
+mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Applications/*.desktop \
+	$RPM_BUILD_ROOT%{_desktopdir}/kde
 
 %find_lang %{name} --with-kde
 
@@ -49,6 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Utilities/*
+%{_desktopdir}/kde/*.desktop
 %{_datadir}/apps/*
-%{_pixmapsdir}/*/*/*/*
+%{_iconsdir}/hicolor/*/apps/*.png
