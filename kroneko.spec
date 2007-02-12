@@ -1,5 +1,5 @@
 Summary:	A KDE3 tool for configuring cron and anacron
-Summary(pl):	Narzêdzie KDE3 u³atwiaj±ce konfiguracjê crona i anacrona
+Summary(pl.UTF-8):   NarzÄ™dzie KDE3 uÅ‚atwiajÄ…ce konfiguracjÄ™ crona i anacrona
 Name:		kroneko
 Version:	0.3.19
 Release:	2
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Kroneko is a KDE3 tool for configuring cron and anacron.
 
-%description -l pl
-Kroneko jest narzêdziem KDE3 u³atwiaj±cym konfiguracjê crona
+%description -l pl.UTF-8
+Kroneko jest narzÄ™dziem KDE3 uÅ‚atwiajÄ…cym konfiguracjÄ™ crona
 i anacrona.
 
 %prep
