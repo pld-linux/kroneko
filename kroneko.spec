@@ -1,5 +1,5 @@
 Summary:	A KDE3 tool for configuring cron and anacron
-Summary(pl.UTF-8):   Narzędzie KDE3 ułatwiające konfigurację crona i anacrona
+Summary(pl.UTF-8):	Narzędzie KDE3 ułatwiające konfigurację crona i anacrona
 Name:		kroneko
 Version:	0.3.19
 Release:	2
